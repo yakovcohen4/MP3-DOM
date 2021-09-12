@@ -12,12 +12,32 @@ function playSong(songId) {
  * Creates a song DOM element based on a song object.
  */
 function createSongElement({ id, title, album, artist, duration, coverArt }) {
-    const children = []
-    const classes = []
-    const attrs = { onclick: `playSong(${id})` }
+    const children = [];
+    const classes = [];
+
+    let ul = document.createElement("ul");
+    for(let i=0; i<5; i++)
+    {
+        if(arguments[i] === arguments[4]) //convert duration to mm:ss format
+        {
+            arguments[i] = durationConvert(arguments[4]);
+        }
+        let li= document.createElement("li");
+        li.innerHTML = arguments[i];
+        ul.appendChild(li);
+    }
+    let a= document.createElement("img");
+    a.src= arguments[5];
+    ul.appendChild(a);
+    children.push(ul);
+    classes.push(["song"]);
+    const attrs = { onclick: `playSong(${id})`,id : "song" +id }
+
     return createElement("div", children, classes, attrs)
 }
-
+// const children = songList({id : id , title : title , album:album , artist:artist ,duration :durationConverter(duration),coverArt:coverArt});
+// const classes = ["song"]
+// const attrs = { onclick: `playSong(${id})` }
 /**
  * Creates a playlist DOM element based on a playlist object.
  */
@@ -25,6 +45,21 @@ function createPlaylistElement({ id, name, songs }) {
     const children = []
     const classes = []
     const attrs = {}
+
+    const ul= document.createElement("ul");
+    for(let i=0; i<3; i++)
+    {
+        let li= document.createElement("li");
+        li.innerHTML = arguments[i];
+        ul.appendChild(li);
+    }
+
+    let li= document.createElement("li");
+    li.innerHTML = durationConvert(playlistDuration(arguments[0]));  
+    ul.appendChild(li);
+    children.push(ul);
+
+    classes.push(["playlists"])
     return createElement("div", children, classes, attrs)
 }
 
