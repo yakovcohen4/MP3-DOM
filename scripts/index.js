@@ -5,7 +5,12 @@
  * @param {String} songId - the ID of the song to play
  */
 function playSong(songId) {
-    // Your code here
+for (let song of player.songs){
+    document.getElementById(song.id).style.background="white"
+    if(song.id===songId){
+        document.getElementById(song.id).style.background="lightblue"
+        }
+    }
 }
 
 /**
