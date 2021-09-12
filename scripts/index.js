@@ -62,7 +62,6 @@ function createPlaylistElement({ id, name, songs }) {
     classes.push(["playlists"])
     return createElement("div", children, classes, attrs)
 }
-
 /**
  * Creates a new DOM element.
  *
@@ -89,3 +88,78 @@ function createElement(tagName, children = [], classes = [], attributes = {}) {
 }
 
 // You can write more code below this line
+
+// convert to mm:ss
+function durationConvert(duration)
+{
+  let min = Math.floor(duration / 60);
+  let sec = duration % 60;
+  
+  if (min < 10){
+    min = "0" + String(min);
+  }
+  if (sec < 10) {
+    sec = "0" + String(sec);
+  }
+  return min+':'+sec
+}
+//gets the songs duration 
+function playlistDuration(id) {
+let sum=0;
+const playlistSongs=GetPlaylistById(id)["songs"]; 
+for(let i of playlistSongs) 
+{
+    let songduration= GetsongById(i)["duration"]; 
+    sum+=songduration;
+}
+
+return sum;
+}
+//return playlist object by id
+function GetPlaylistById(id) 
+{
+  let playObj= player.playlists.find(x=> x["id"]===id);
+  return playObj;
+}
+//return song object by id
+function GetsongById(id) 
+{
+  let songObj= player.songs.find(x=> x["id"]===id);
+  return songObj;
+}
+// sort the song and the playlist
+function sortedSongs () {
+    player.songs.sort((a, b) => (a.title > b.title) * 2 - 1)
+}
+function sortedPlaylists () {
+    player.playlists.sort((a, b) => (a.name > b.name) * 2 - 1)
+}
+
+//print the song
+const songdiv= document.getElementById("songs");
+const playlistDiv= document.getElementById("playlists")
+
+function PrintAllSongs()
+{
+    for(let song of player.songs)
+    {
+        const { id, title, album, artist, duration, coverArt}= song;
+        const songElem = createSongElement(id, title, album, artist, duration, coverArt);
+        songdiv.appendChild(songElem);
+    }
+}
+function PrintAllPlaylists()
+{
+    for(let playlist of player.playlists)
+    {
+        const { id, name, songs}= playlist;
+        const playlistElem = createPlaylistElement(id, name, songs);
+        playlistDiv.appendChild(playlistElem);
+    }
+}
+
+
+sortedSongs();
+sortedPlaylists();
+PrintAllSongs();
+PrintAllPlaylists();
