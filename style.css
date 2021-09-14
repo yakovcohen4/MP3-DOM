@@ -1,33 +1,52 @@
 /* Your code here */
-body > div {
-    text-align: center;
-    font-size: 24px;
-}
 
+body {
+    background-color:lightgray;
+    text-align: center;
+    font-size: 20px;
+    font-family: cursive;
+}
+#songs{
+    border-bottom: 2px dotted violet;
+    
+}
 .song {
     border: 2px dotted coral;
     margin-top: 50px;
     margin-bottom: 50px;
     margin-right: 250px;
     margin-left: 250px;
+    text-align: left;
+    
 }
 
-.playlists{
+.playlist {
     border: 2px dotted coral;
     margin-top: 50px;
     margin-bottom: 50px;
     margin-right: 250px;
     margin-left: 250px;
+    
 }
 
-ul {
-    list-style-type: none;
-  }
-img{
-    height: 150px;
-    width: 150px;
+.album-art{
+    height: 50px;
+    width: 50px;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
+    /* float: left; */
+    
 }
+/* .id {
 
+} */
+.short-duration {
+color: green;
+}
+.durationMore{
+color: red;
+}
+.durationBetween{
+color: blue;
+}
