@@ -1,52 +1,81 @@
-/* Your code here */
-
 body {
     background-color:lightgray;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.3em;
     font-family: cursive;
 }
+/* @media only screen 
+    and (min-device-width: 100px) 
+    and (max-device-width: 500px) 
+    {
+    
+    body {
+        background-color:blue;
+        text-align: center;
+        font-size: 1.3em;
+        font-family: cursive;
+    }
+} */
+
 #songs{
     border-bottom: 2px dotted violet;
     
 }
 .song {
     border: 2px dotted coral;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 250px;
-    margin-left: 250px;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    margin-right: 10em;
+    margin-left: 10em;
     text-align: left;
     
 }
 
 .playlist {
     border: 2px dotted coral;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 250px;
-    margin-left: 250px;
-    
+    margin-top: 3em;
+    margin-bottom: 3em;
+    margin-right: 10em;
+    margin-left: 10em;
+    text-align:center;
 }
 
 .album-art{
-    height: 50px;
-    width: 50px;
+    /* position: fixed; */
+    height: 100px;
+    width: 100px;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    /* float: left; */
-    
+    /* float: left;  */
 }
-/* .id {
+.button {
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;
+    /* float: right; */
+}
+.title{
+    
+    /* margin-left: 6em; */
+}
+.album{
+    /* margin-left: 6em; */
+}
+.artist{
+    /* margin-left: 6em; */
+}
+.duration {
+    float:right;
+}
 
-} */
+
 .short-duration {
-color: green;
+    color: green;
 }
 .durationMore{
-color: red;
+    color: red;
 }
 .durationBetween{
-color: blue;
+    color: blue;
 }
