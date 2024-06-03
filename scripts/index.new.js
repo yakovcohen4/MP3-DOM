@@ -4,66 +4,74 @@
  *
  * @param {Number} songId - the ID of the song to play
  */
-function playSong(songId) {
-    // Your code here
-}
+// function playSong(songId) {
+//     // Your code here
+// }
 
 /**
  * Removes a song from the player, and updates the DOM to match.
  *
  * @param {Number} songId - the ID of the song to remove
  */
-function removeSong(songId) {
-    // Your code here
-}
+// function removeSong(songId) {
+//     // Your code here
+// }
 
-/**
- * Adds a song to the player, and updates the DOM to match.
- */
-function addSong({ title, album, artist, duration, coverArt }) {
-    // Your code here
-}
+// /**
+//  * Adds a song to the player, and updates the DOM to match.
+//  */
+// function addSong({ title, album, artist, duration, coverArt }) {
+//     // Your code here
+//     const newSong = {
+//         title: title,
+//         album: album,
+//         artist: artist,
+//         duration: durationConvert(duration),
+//         coverArt: coverArt
+//     }
+//     player.songs.push(newSong);
+// }
 
-/**
- * Acts on a click event on an element inside the songs list.
- * Should handle clicks on play buttons and remove buttons of songs.
- *
- * @param {MouseEvent} event - the click event
- */
-function handleSongClickEvent(event) {
-    // Your code here
-}
+// /**
+//  * Acts on a click event on an element inside the songs list.
+//  * Should handle clicks on play buttons and remove buttons of songs.
+//  *
+//  * @param {MouseEvent} event - the click event
+//  */
+// function handleSongClickEvent(event) {
+//     // Your code here
+// }
 
-/**
- * Handles a click event on the button that adds songs.
- *
- * @param {MouseEvent} event - the click event
- */
-function handleAddSongEvent(event) {
-    // Your code here
-}
+// /**
+//  * Handles a click event on the button that adds songs.
+//  *
+//  * @param {MouseEvent} event - the click event
+//  */
+// function handleAddSongEvent(event) {
+//     // Your code here
+// }
 
 /**
  * Creates a song DOM element based on a song object.
  */
-function createSongElement({ id, title, album, artist, duration, coverArt }) {
-    const children = []
-    const classes = []
-    const attrs = {}
-    const eventListeners = {}
-    return createElement("div", children, classes, attrs, eventListeners)
-}
+// function createSongElement({ id, title, album, artist, duration, coverArt }) {
+//     const children = []
+//     const classes = []
+//     const attrs = {}
+//     const eventListeners = {}
+//     return createElement("div", children, classes, attrs, eventListeners)
+// }
 
 /**
  * Creates a playlist DOM element based on a playlist object.
  */
-function createPlaylistElement({ id, name, songs }) {
-    const children = []
-    const classes = []
-    const attrs = {}
-    const eventListeners = {}
-    return createElement("div", children, classes, attrs, eventListeners)
-}
+// function createPlaylistElement({ id, name, songs }) {
+//     const children = []
+//     const classes = []
+//     const attrs = {}
+//     const eventListeners = {}
+//     return createElement("div", children, classes, attrs, eventListeners)
+// }
 
 /**
  * Creates a new DOM element.
@@ -78,27 +86,48 @@ function createPlaylistElement({ id, name, songs }) {
  * @param {Object} attributes - the attributes for the new element
  * @param {Object} eventListeners - the event listeners on the element
  */
-function createElement(tagName, children = [], classes = [], attributes = {}, eventListeners = {}) {
-    // Your code here
-}
+// function createElement(tagName, children = [], classes = [], attributes = {}, eventListeners = {}) {
+//     // Your code here
+
+//     const element = document.createElement(tagName);
+//     // Children
+//     for(const child of children) {
+//       element.append(child);
+//     }
+//     // Classes
+//     for(const cls of classes) {
+//       element.classList.add(cls);
+//     }
+//     // Attributes
+//     for (const attr in attributes) {
+//       element.setAttribute(attr, attributes[attr]);
+//     }
+//     for(const enent in eventListeners){
+//         element.addEventListener(enent)
+//     }
+
+//     return element;
+// }
 
 /**
  * Inserts all songs in the player as DOM elements into the songs list.
  */
-function generateSongs() {
-    // Your code here
-}
+// function generateSongs() {
+//     // Your code here
 
-/**
- * Inserts all playlists in the player as DOM elements into the playlists list.
- */
-function generatePlaylists() {
-    // Your code here
-}
+// }
 
-// Creating the page structure
-generateSongs()
-generatePlaylists()
+// /**
+//  * Inserts all playlists in the player as DOM elements into the playlists list.
+//  */
+// function generatePlaylists() {
+//     // Your code here
+// }
+
+// // Creating the page structure
+// generateSongs()
+// generatePlaylists()
+
 
 // Making the add-song-button actually do something
-document.getElementById("add-button").addEventListener("click", handleAddSongEvent)
+// document.getElementById("add-button").addEventListener("click", handleAddSongEvent)
